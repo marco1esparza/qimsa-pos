@@ -11,4 +11,3 @@ export COUNTRY="MX"
 export CUSTOMER="qimsa"
 export COVERAGE_MIN=20
 export COVERAGE_PRECISION=2
-
