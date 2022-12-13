@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    
+    <t t-extend="OrderReceipt">
+        <t t-jquery="[t-if='receipt.company.vat']" t-operation="after">
+            <t t-if="receipt.company.l10n_mx_edi_fiscal_regime">
+                <div>Fiscal Regime: <t t-esc="pos.fiscal_regimes_by_id[receipt.company.l10n_mx_edi_fiscal_regime]" /></div>
+            </t>
+        </t>
+        <t t-jquery="[t-if='receipt.company.website']" t-operation="after">
+            <t t-if="receipt.warehouse_partner">
+                <div>Warehouse: <t t-esc="receipt.warehouse_partner.name" /></div>
+                <div>
+                    <t t-esc="receipt.warehouse_partner.street" />
+                </div>
+                <div>Zip: <t t-esc="receipt.warehouse_partner.zip" /></div>
+                <div>
+                    <t t-esc="receipt.warehouse_partner.city" />
+                    <t t-esc="receipt.warehouse_partner.state_id" /> 
+                    <t t-esc="receipt.warehouse_partner.country_id" />
+                </div>
+            </t>
+        </t>
+    </t>
+
+</templates>
